@@ -1,1 +1,24 @@
-**/node_modules
+# Ignore node_modules directory in all projects
+*/node_modules
+
+# Ignore environment files in all projects
+*/.env
+
+# Ignore IDE-specific files
+*/.vscode
+*/.idea
+
+# Ignore build directories
+*/build
+*/dist
+
+# Ignore editor backup files
+*~
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore npm and Yarn cache directories
+*/.npm
+*/.yarn
