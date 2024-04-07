@@ -12,21 +12,12 @@ function App() {
     {
       id: 0,
       path: "/dashboard",
-      // Lazy Loading requires a suspense fallback
-      element: (
-        <Suspense fallback={"loading"}>   
-          <Dashboard />
-        </Suspense>
-      ),
+      element: <PageSuspense page={<Dashboard />} />
     },
     {
       id: 1,
       path: "/",
-      element: (
-        <Suspense fallback={"loading"}>
-          <Home />
-        </Suspense>
-      ),
+      element: <PageSuspense page={<Home />} />
     },
   ];
 
@@ -42,6 +33,13 @@ function App() {
       </BrowserRouter>
     </div>
   );
+}
+
+// Lazy Loading requires a suspense fallback
+function PageSuspense({ page }) {
+  return <Suspense fallback={"loading"}>
+    {page}
+  </Suspense>
 }
 
 export default App;
