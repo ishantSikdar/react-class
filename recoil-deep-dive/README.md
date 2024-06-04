@@ -41,15 +41,12 @@ How Recoil works and its key features:
 
 ### Asynchronous Data using Atoms and Selectors
 
-    - Selectors in Recoil can perform asynchronous operations, such as fetching data from an API, and provide derived state.
+   - Selectors in Recoil can perform asynchronous operations, such as fetching data from an API, and provide derived state.
 
-    - Flow:
+   - Flow:
       - Define a selector to fetch data asynchronously.
       - Use this selector as the default value for an atom.
       - Access the atom’s state in React components using Recoil hooks.
-
-
-
 
 
       ```js   
