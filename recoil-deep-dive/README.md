@@ -39,7 +39,7 @@ How Recoil works and its key features:
 
   - Note: The get property of a selector is a function that gives access to the `{get}` param, a function that allows to retreive value of any recoil atom or selector.
 
-3. ### Asynchronous Data using Atoms and Selectors
+### Asynchronous Data using Atoms and Selectors
 
     - Selectors in Recoil can perform asynchronous operations, such as fetching data from an API, and provide derived state.
 
