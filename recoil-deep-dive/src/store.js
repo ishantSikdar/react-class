@@ -31,7 +31,6 @@ export const countAtom = atom({
     default: selector({
         key: "countSelector",
         get: async () => {
-            await new Promise(r => setTimeout(r, 5000));
             const res = await axios.get("https://sum-server.100xdevs.com/notifications");
             return res.data;
         }
