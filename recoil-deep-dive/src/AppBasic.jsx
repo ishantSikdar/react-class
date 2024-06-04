@@ -17,12 +17,10 @@ function App() {
   return (
     <>
       <button>Home</button>
-
       <button>Network ({notifications.network})</button>
       <button>Jobs ({notifications.jobs})</button>
       <button>Messages ({notifications.messaging})</button>
       <button>Notifications ({notifications.notifications})</button>
-
       <button>Me</button>
 
       {/* <UpdateButton /> */}

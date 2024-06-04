@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './AppAdvance.jsx'
 import './index.css'
 import { RecoilRoot } from 'recoil'
 

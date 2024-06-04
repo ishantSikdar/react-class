@@ -1,5 +1,6 @@
 import axios from "axios";
-import { atom, selector } from "recoil";
+import { atom, atomFamily, selector, selectorFamily } from "recoil";
+import todos from "./todos";
 
 
 // hardcoded recoil states
@@ -22,7 +23,6 @@ export const messagingAtom = atom({
     key: "messagingAtom",
     default: 0
 });
-
 
 
 // async recoil state management
@@ -50,3 +50,24 @@ export const totalCountSelector = selector({
         return networkCount + jobCount + notifCount + messageCount;
     }
 })
+
+
+// atom family
+export const todoAtomFamily = atomFamily({
+    key: "todoAtomFamily",
+    default: (id) => {
+        return todos.find(todo => todo.id == id)
+    }
+})
+
+// async query for atomFamily (using selectorFamily)
+export const todoAsyncAtomFamily = atomFamily({
+    key: "todoAsyncAtomFamily",
+    default: selectorFamily({
+        key: "todoAsyncSelectorFamily",
+        get: (id) => async ({ get }) => {
+            const res = await axios.get(`https://sum-server.100xdevs.com/todo?id=${id}`);
+            return res.data.todo;
+        }
+    })
+});
